@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">TestApp</string>
+
+    <string name="hint_name">Masukkan nama...</string>
+
+    <string name="label_name">Nama : </string>
+    <string name="label_tanggal">Tanggal</string>
+    <string name="label_tgl_lahir">Tanggal lahir</string>
+
+    <string name="btn_next">Selanjutnya</string>
+    <string name="btn_event">Pilih event</string>
+    <string name="btn_guest">Pilih guest</string>
+
 </resources>
