@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.btnNext.setOnClickListener(this)
 
+        supportActionBar?.title = "Login"
     }
 
     private fun moveToHome(name: String) {

@@ -29,6 +29,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.btnEvent.setOnClickListener(this)
         binding.btnGuest.setOnClickListener(this)
+
+        supportActionBar?.title = "Home"
     }
 
     override fun onClick(v: View?) {
