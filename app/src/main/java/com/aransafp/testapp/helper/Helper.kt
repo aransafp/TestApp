@@ -1,5 +1,7 @@
 package com.aransafp.testapp.helper
 
+import java.util.*
+
 object Helper {
 
     //fungsi untuk mendapatkan hari
@@ -30,7 +32,7 @@ object Helper {
 
     //check isPalindrom
     fun isPalindrome(name: String): Boolean {
-        val input = name.replace("\\s".toRegex(), "")
+        val input = name.replace("\\s".toRegex(), "").lowercase(Locale.getDefault())
         var i = 0
         var j = input.length - 1
 
