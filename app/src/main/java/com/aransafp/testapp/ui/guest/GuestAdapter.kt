@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.aransafp.testapp.data.model.Guest
 import com.aransafp.testapp.databinding.ItemsGuestBinding
+import com.aransafp.testapp.helper.Helper
 
 class GuestAdapter() : RecyclerView.Adapter<GuestAdapter.ViewHolder>() {
 
@@ -45,6 +46,10 @@ class GuestAdapter() : RecyclerView.Adapter<GuestAdapter.ViewHolder>() {
 
                 tvName.text = guest.name
                 tvBirthday.text = guest.birthdate
+
+                val messageMonthPrime =
+                    if (Helper.isMonthPrime(guest.birthdate)) "month is prime number" else "month isn't prime number"
+                tvMonthPrime.text = messageMonthPrime
 
                 itemView.setOnClickListener { onItemClickCallback.onItem(guest) }
             }

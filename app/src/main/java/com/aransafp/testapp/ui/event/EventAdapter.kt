@@ -53,12 +53,12 @@ class EventAdapter : RecyclerView.Adapter<EventAdapter.ViewHolder>() {
                     .load(event.image)
                     .into(imgPoster)
 
-                itemView.setOnClickListener { onItemClickCallback.onItem(event.name) }
+                itemView.setOnClickListener { onItemClickCallback.onItem(event) }
             }
         }
     }
 
     interface OnItemClickCallback {
-        fun onItem(eventName: String)
+        fun onItem(eventName: Event)
     }
 }

@@ -10,6 +10,10 @@ data class Event(
 
     var tema: String,
 
-    var deskripsi: String
+    var deskripsi: String,
+
+    var lat: Double,
+
+    val lng: Double
 
 )
