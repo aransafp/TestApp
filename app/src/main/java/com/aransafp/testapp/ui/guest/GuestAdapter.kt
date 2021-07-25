@@ -1,4 +1,4 @@
-package com.aransafp.testapp.guest
+package com.aransafp.testapp.ui.guest
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

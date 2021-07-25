@@ -1,4 +1,4 @@
-package com.aransafp.testapp.guest
+package com.aransafp.testapp.ui.guest
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,14 +7,16 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.aransafp.testapp.R
 import com.aransafp.testapp.data.model.Guest
 import com.aransafp.testapp.data.network.ApiConfig
 import com.aransafp.testapp.databinding.ActivityGuestBinding
 import com.aransafp.testapp.helper.Helper
-import com.aransafp.testapp.home.HomeActivity
+import com.aransafp.testapp.ui.home.HomeActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 class GuestActivity : AppCompatActivity() {
 
@@ -37,6 +39,11 @@ class GuestActivity : AppCompatActivity() {
         adapter = GuestAdapter()
         loadGuest()
 
+        binding.swipeRefresh.setOnRefreshListener {
+            loadGuest()
+            binding.swipeRefresh.isRefreshing = false
+        }
+
         adapter.setOnItemClickCallback(object : GuestAdapter.OnItemClickCallback {
             override fun onItem(guest: Guest) {
 
@@ -54,7 +61,6 @@ class GuestActivity : AppCompatActivity() {
         })
 
         supportActionBar?.title = "List Guest"
-
     }
 
     //Load data from API

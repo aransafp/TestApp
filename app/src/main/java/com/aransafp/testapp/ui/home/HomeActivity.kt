@@ -1,4 +1,4 @@
-package com.aransafp.testapp.home
+package com.aransafp.testapp.ui.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.aransafp.testapp.R
 import com.aransafp.testapp.databinding.ActivityHomeBinding
-import com.aransafp.testapp.event.EventActivity
-import com.aransafp.testapp.guest.GuestActivity
+import com.aransafp.testapp.ui.event.EventActivity
+import com.aransafp.testapp.ui.guest.GuestActivity
 
 class HomeActivity : AppCompatActivity(), View.OnClickListener {
 

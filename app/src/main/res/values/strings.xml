@@ -11,4 +11,10 @@
     <string name="btn_event">Pilih event</string>
     <string name="btn_guest">Pilih guest</string>
 
+    <string name="polindrome_true">True</string>
+    <string name="polindrome_false">False</string>
+    <string name="label_perintah">Sertakan gambar profil anda untuk melengkapi profil.</string>
+    <string name="label_hello">Selamat Datang!</string>
+    <string name="action_search">search</string>
+    <string name="action_map">map</string>
 </resources>

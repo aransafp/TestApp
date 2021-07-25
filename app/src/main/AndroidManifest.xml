@@ -12,16 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestApp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".home.HomeActivity" />
-        <activity android:name=".event.EventActivity" />
-        <activity android:name=".guest.GuestActivity" />
-        <activity android:name=".main.MainActivity">
+        <activity android:name=".ui.map.MapActivity"></activity>
+        <activity android:name=".ui.home.HomeActivity" />
+        <activity android:name=".ui.event.EventActivity" />
+        <activity android:name=".ui.guest.GuestActivity" />
+        <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBZRxAdVoO8MNWx9GPdhX_VYVzt80NlHK4" />
     </application>
+
+
+
 
 </manifest>

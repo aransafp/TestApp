@@ -1,12 +1,14 @@
-package com.aransafp.testapp.main
+package com.aransafp.testapp.ui.main
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.aransafp.testapp.R
 import com.aransafp.testapp.databinding.ActivityMainBinding
-import com.aransafp.testapp.home.HomeActivity
+import com.aransafp.testapp.helper.Helper
+import com.aransafp.testapp.ui.home.HomeActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -19,7 +21,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.btnNext.setOnClickListener(this)
 
-        supportActionBar?.title = "Login"
+        supportActionBar?.hide()
     }
 
     private fun moveToHome(name: String) {
@@ -36,10 +38,30 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             if (inputName.isEmpty()) {
                 binding.edName.error = "Jangan kosong"
             } else {
-                moveToHome(inputName)
+//                moveToHome(inputName)
+                showDialog(inputName)
             }
 
         }
     }
 
+
+    fun showDialog(name: String) {
+
+        val dialogMessage =
+            if (Helper.isPalindrome(name)) R.string.polindrome_true else R.string.polindrome_false
+
+        val alertDialogBuilder = AlertDialog.Builder(this)
+        with(alertDialogBuilder) {
+            setTitle("check is your name palindrome")
+            setMessage(dialogMessage)
+            setCancelable(false)
+            setPositiveButton("NEXT") { _, _ ->
+                moveToHome(name)
+            }
+            setNegativeButton("BACK") { dialog, _ -> dialog.cancel() }
+        }
+        val alertDialog = alertDialogBuilder.create()
+        alertDialog.show()
+    }
 }

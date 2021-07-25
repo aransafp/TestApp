@@ -6,6 +6,10 @@ data class Event(
 
     var image: String,
 
-    var tanggal: String
+    var tanggal: String,
+
+    var tema: String,
+
+    var deskripsi: String
 
 )

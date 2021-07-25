@@ -1,4 +1,4 @@
-package com.aransafp.testapp.event
+package com.aransafp.testapp.ui.event
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -46,6 +46,8 @@ class EventAdapter : RecyclerView.Adapter<EventAdapter.ViewHolder>() {
 
                 tvName.text = event.name
                 tvTgl.text = event.tanggal
+                tvTema.text = event.tema
+                tvDeskripsi.text = event.deskripsi
 
                 Glide.with(itemView.context)
                     .load(event.image)

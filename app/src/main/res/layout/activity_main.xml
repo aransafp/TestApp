@@ -4,35 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.MainActivity">
+    android:background="@drawable/bg_validation"
+    tools:context=".ui.main.MainActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_name"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <TextView
+        android:id="@+id/tv_selamat_datang"
+        style="@style/TextView.White.Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/label_hello"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_perintah"
+        style="@style/TextView.White"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="center"
+        android:text="@string/label_perintah"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_selamat_datang" />
+
+    <ImageButton
+        android:id="@+id/btn_add_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:background="@android:color/transparent"
+        android:padding="20dp"
+        android:src="@drawable/btn_add_photo"
+        app:layout_constraintEnd_toEndOf="@+id/tv_perintah"
+        app:layout_constraintStart_toStartOf="@+id/tv_perintah"
+        app:layout_constraintTop_toBottomOf="@+id/tv_perintah" />
+
+    <EditText
+        android:id="@+id/ed_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="@string/hint_name"
+        android:background="@android:color/transparent"
+        android:hint="Masukkan Nama ..."
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btn_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/btn_add_img" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ed_name" />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_next"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/btn_border_white"
         android:text="@string/btn_next"
-        app:layout_constraintEnd_toEndOf="@+id/til_name"
-        app:layout_constraintStart_toStartOf="@+id/til_name"
-        app:layout_constraintTop_toBottomOf="@+id/til_name" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ed_name"
+        app:layout_constraintStart_toStartOf="@+id/ed_name"
+        app:strokeColor="@color/white" />
 </androidx.constraintlayout.widget.ConstraintLayout>
