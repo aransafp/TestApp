@@ -28,13 +28,15 @@ object Helper {
 
     }
 
-    fun isPalindrome(input: String): Boolean {
+    //check isPalindrom
+    fun isPalindrome(name: String): Boolean {
+        val input = name.replace("\\s".toRegex(), "")
         var i = 0
         var j = input.length - 1
 
         while (i < j) {
 
-            if (input.get(i) != input.get(j)) {
+            if (input[i] != input[j]) {
                 return false
             }
 
@@ -66,6 +68,6 @@ object Helper {
             ++i
         }
 
-            return flag
+        return flag
     }
 }
