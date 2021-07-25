@@ -22,8 +22,8 @@ import com.google.android.gms.maps.model.MarkerOptions
 class MapFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var eventAdapter: EventAdapter
-    var lat: Double = 1.0
-    var lng: Double = 1.0
+    var lat: Double = 50.049683
+    var lng: Double = 19.944544
 
     //binding
     private var _binding: FragmentMapBinding? = null
@@ -70,7 +70,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     override fun onMapReady(gmap: GoogleMap) {
         val location = LatLng(lat, lng)
         gmap.addMarker(MarkerOptions().position(location).title("MyLocation"))
-        gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 8f))
+        gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 10f))
     }
 
     private fun initRecyclerView() {
